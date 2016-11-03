@@ -1,0 +1,13 @@
+		<option value="00" <? if ("00"==$month_SELECTED) {echo "SELECTED";}?>>---</option>
+		<option value="01" <? if ("01"==$month_SELECTED) {echo "SELECTED";}?>>January</option>
+        	<option value="02" <? if ("02"==$month_SELECTED) {echo "SELECTED";}?>>February</option>
+        	<option value="03" <? if ("03"==$month_SELECTED) {echo "SELECTED";}?>>March</option>
+        	<option value="04" <? if ("04"==$month_SELECTED) {echo "SELECTED";}?>>April</option>
+        	<option value="05" <? if ("05"==$month_SELECTED) {echo "SELECTED";}?>>May</option>
+        	<option value="06" <? if ("06"==$month_SELECTED) {echo "SELECTED";}?>>June</option>
+        	<option value="07" <? if ("07"==$month_SELECTED) {echo "SELECTED";}?>>July</option>
+        	<option value="08" <? if ("08"==$month_SELECTED) {echo "SELECTED";}?>>August</option>
+        	<option value="09" <? if ("09"==$month_SELECTED) {echo "SELECTED";}?>>September</option>
+        	<option value="10" <? if ("10"==$month_SELECTED) {echo "SELECTED";}?>>October</option>
+        	<option value="11" <? if ("11"==$month_SELECTED) {echo "SELECTED";}?>>November</option>
+        	<option value="12" <? if ("12"==$month_SELECTED) {echo "SELECTED";}?>>December</option>

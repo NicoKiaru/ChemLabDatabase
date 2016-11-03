@@ -1,0 +1,36 @@
+<?php	$login = $_SERVER["REMOTE_USER"];
+
+// example for LDAP identification from my former lab. Needs to be tuned for correct identification.
+
+	$ldap_server="";		// Server hosting ldap server
+	$ldap_port=389;			// LDAP port
+	$ldap_objectclass="person";	// Filter for LDAP request
+
+		if (($ds = ldap_connect($ldap_server, $ldap_port)) == FALSE) {
+			printf("Error: ldap_connect()");
+			exit;
+		}
+		if (ldap_set_option($ds, LDAP_OPT_PROTOCOL_VERSION, 3) == FALSE) {
+		        printf("Error: ldap_set_option(): %s\n", ldap_error($ds));
+			exit;
+		}
+       
+		if (ldap_bind($ds) == FALSE) {
+		        printf("Error: ldap_bind(): %s", ldap_error($ds));
+			exit;
+		}
+
+		$flt = sprintf("(&(uid=%s)(objectClass=".$ldap_objectclass."))",
+			       $login);
+		$attrs = array("cn", "ou"); // Attributes : name and lab name
+		$res = ldap_search($ds, "dc=,dc=fr", $flt, $attrs);
+		$rec = ldap_get_entries($ds, $res);
+		
+		if ($rec["count"] != 1) {
+			printf("Error: multiple users (%d)\n", $rec["count"]);
+			exit;
+		}
+
+		$NAME_USER = $rec[0]["cn"][0];
+		$LABO_USER = $rec[0]["ou"][0];
+	?>

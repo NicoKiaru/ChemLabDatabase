@@ -1,0 +1,21 @@
+<?php
+
+$MSDS_PATH = 'msds/';
+$IS_PATH = 'Information_Sheets/';
+
+$DB_SERVERNAME="localhost";
+$DB_NAME="db_chemlabdatabase";
+$DB_USERNAME="root";
+$DB_PASSWORD="";
+$CONTACT_EMAIL="me@mylab.ch";
+
+$InstitutionName="UNIGE";
+$LabName1="mylab";
+$LabName2="anotherlab";
+
+// for simple authentification
+$authorized_IPs= array(
+		'::1',
+		'127.0.0.1');
+
+?>
