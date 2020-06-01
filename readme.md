@@ -1,4 +1,4 @@
-
+## [Demo version](http://poupitoupou.free.fr/ChemLabDatabase/)
 
 ## Installing ChemLabDatabase
 
